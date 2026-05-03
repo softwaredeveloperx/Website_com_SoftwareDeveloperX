@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Available for Remote Work | SDR - Software DevelopeR</title>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600;700&family=Sora:wght@300;400;600&display=swap" rel="stylesheet"/>
+  <style>
+    :root {
+      --bg:       #0f1117;
+      --surface:  #181c27;
+      --border:   #2a2f3f;
+      --green:    #39d98a;
+      --cyan:     #38bdf8;
+      --amber:    #fbbf24;
+      --text:     #e2e8f0;
+      --muted:    #7c8599;
+      --font-mono: 'JetBrains Mono', monospace;
+      --font-body: 'Sora', sans-serif;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: var(--font-body);
+      min-height: 100vh;
+      overflow-x: hidden;
+    }
+
+    /* ── grid noise overlay ── */
+    body::before {
+      content: '';
+      position: fixed; inset: 0;
+      background-image:
+        linear-gradient(rgba(57,217,138,.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(57,217,138,.03) 1px, transparent 1px);
+      background-size: 40px 40px;
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    /* ── nav ── */
+    nav {
+      position: sticky; top: 0; z-index: 100;
+      background: rgba(15,17,23,.85);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+      padding: 0 2rem;
+      display: flex; align-items: center; justify-content: space-between;
+      height: 56px;
+    }
+    .nav-brand {
+      font-family: var(--font-mono);
+      font-size: .9rem; font-weight: 700;
+      color: var(--green);
+      text-decoration: none;
+      display: flex; align-items: center; gap: .5rem;
+    }
+    .nav-brand span { color: var(--muted); font-weight: 400; }
+    nav a.back {
+      font-family: var(--font-mono); font-size: .8rem;
+      color: var(--muted); text-decoration: none;
+      transition: color .2s;
+    }
+    nav a.back:hover { color: var(--cyan); }
+
+    /* ── hero ── */
+    .hero {
+      position: relative; z-index: 1;
+      padding: 5rem 2rem 3rem;
+      max-width: 860px; margin: 0 auto;
+    }
+
+    .status-badge {
+      display: inline-flex; align-items: center; gap: .5rem;
+      background: rgba(57,217,138,.1);
+      border: 1px solid rgba(57,217,138,.3);
+      border-radius: 100px;
+      padding: .35rem 1rem;
+      font-family: var(--font-mono); font-size: .75rem;
+      color: var(--green);
+      margin-bottom: 1.8rem;
+      animation: fadeDown .6s ease both;
+    }
+    .status-dot {
+      width: 7px; height: 7px; border-radius: 50%;
+      background: var(--green);
+      animation: pulse 2s infinite;
+    }
+    @keyframes pulse {
+      0%,100% { opacity:1; transform:scale(1); }
+      50%      { opacity:.4; transform:scale(1.4); }
+    }
+
+    h1 {
+      font-family: var(--font-mono);
+      font-size: clamp(2rem, 5vw, 3.2rem);
+      font-weight: 700;
+      line-height: 1.15;
+      animation: fadeDown .7s .1s ease both;
+    }
+    h1 .name  { color: var(--cyan); }
+    h1 .role  { color: var(--text); }
+    h1 .blink {
+      display: inline-block;
+      width: 3px; height: 1em;
+      background: var(--green);
+      margin-left: 4px;
+      vertical-align: text-bottom;
+      animation: blink 1s step-end infinite;
+    }
+    @keyframes blink { 0%,100%{opacity:1} 50%{opacity:0} }
+
+    .tagline {
+      margin-top: 1.2rem;
+      font-size: 1.05rem; color: var(--muted); line-height: 1.7;
+      max-width: 580px;
+      animation: fadeDown .7s .2s ease both;
+    }
+    .tagline strong { color: var(--text); }
+
+    /* ── meta row ── */
+    .meta-row {
+      display: flex; flex-wrap: wrap; gap: 1.2rem;
+      margin-top: 2rem;
+      animation: fadeDown .7s .3s ease both;
+    }
+    .meta-item {
+      font-family: var(--font-mono); font-size: .8rem;
+      color: var(--muted);
+      display: flex; align-items: center; gap: .4rem;
+    }
+    .meta-item .icon { color: var(--amber); }
+    .meta-item strong { color: var(--text); }
+
+    /* ── section layout ── */
+    .content {
+      position: relative; z-index: 1;
+      max-width: 860px; margin: 0 auto;
+      padding: 0 2rem 5rem;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.5rem;
+    }
+    @media (max-width: 640px) {
+      .content { grid-template-columns: 1fr; }
+    }
+    .full { grid-column: 1 / -1; }
+
+    /* ── card ── */
+    .card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 1.6rem;
+      transition: border-color .25s, transform .25s;
+      animation: fadeUp .6s ease both;
+    }
+    .card:hover {
+      border-color: rgba(56,189,248,.35);
+      transform: translateY(-2px);
+    }
+    .card-title {
+      font-family: var(--font-mono); font-size: .7rem;
+      letter-spacing: .12em; text-transform: uppercase;
+      color: var(--cyan); margin-bottom: 1.1rem;
+      display: flex; align-items: center; gap: .5rem;
+    }
+    .card-title::before {
+      content: '';
+      display: inline-block; width: 18px; height: 1px;
+      background: var(--cyan);
+    }
+
+    /* skills grid */
+    .skills-grid {
+      display: flex; flex-wrap: wrap; gap: .6rem;
+    }
+    .tag {
+      font-family: var(--font-mono); font-size: .75rem;
+      background: rgba(255,255,255,.05);
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      padding: .3rem .7rem;
+      color: var(--text);
+      transition: background .2s, border-color .2s;
+    }
+    .tag:hover { background: rgba(56,189,248,.1); border-color: var(--cyan); }
+    .tag.hi { border-color: rgba(57,217,138,.4); color: var(--green); }
+
+    /* timeline */
+    .timeline { display: flex; flex-direction: column; gap: .9rem; }
+    .tl-item { display: flex; gap: .9rem; align-items: flex-start; }
+    .tl-year {
+      font-family: var(--font-mono); font-size: .72rem;
+      color: var(--amber); min-width: 42px; padding-top: 2px;
+    }
+    .tl-text { font-size: .88rem; color: var(--muted); line-height: 1.55; }
+    .tl-text strong { color: var(--text); }
+
+    /* availability */
+    .avail-list { display: flex; flex-direction: column; gap: .8rem; }
+    .avail-item { display: flex; gap: .8rem; align-items: flex-start; }
+    .avail-dot {
+      width: 8px; height: 8px; border-radius: 50%;
+      background: var(--green); margin-top: 5px; flex-shrink: 0;
+    }
+    .avail-text { font-size: .88rem; color: var(--muted); line-height: 1.5; }
+    .avail-text strong { color: var(--text); }
+
+    /* contact form */
+    .form-grid { display: flex; flex-direction: column; gap: 1rem; }
+    label {
+      font-family: var(--font-mono); font-size: .72rem;
+      color: var(--muted); display: block; margin-bottom: .35rem;
+    }
+    input, textarea, select {
+      width: 100%;
+      background: rgba(255,255,255,.04);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: .7rem 1rem;
+      color: var(--text);
+      font-family: var(--font-body); font-size: .9rem;
+      outline: none;
+      transition: border-color .2s, box-shadow .2s;
+    }
+    input:focus, textarea:focus, select:focus {
+      border-color: var(--cyan);
+      box-shadow: 0 0 0 3px rgba(56,189,248,.1);
+    }
+    textarea { resize: vertical; min-height: 110px; }
+    select option { background: var(--surface); }
+
+    .btn {
+      display: inline-flex; align-items: center; gap: .6rem;
+      background: var(--green);
+      color: #0f1117;
+      font-family: var(--font-mono); font-size: .85rem; font-weight: 700;
+      border: none; border-radius: 8px;
+      padding: .85rem 1.8rem;
+      cursor: pointer;
+      transition: opacity .2s, transform .15s;
+      text-decoration: none;
+    }
+    .btn:hover { opacity: .88; transform: translateY(-1px); }
+    .btn-ghost {
+      background: transparent;
+      border: 1px solid var(--border);
+      color: var(--muted);
+    }
+    .btn-ghost:hover { border-color: var(--cyan); color: var(--cyan); }
+
+    /* confirmation */
+    #confirm {
+      display: none;
+      background: rgba(57,217,138,.1);
+      border: 1px solid rgba(57,217,138,.3);
+      border-radius: 8px;
+      padding: 1rem 1.2rem;
+      font-family: var(--font-mono); font-size: .82rem;
+      color: var(--green);
+    }
+
+    /* divider */
+    .divider {
+      grid-column: 1/-1;
+      border: none; border-top: 1px solid var(--border);
+      margin: .5rem 0;
+    }
+
+    /* animations */
+    @keyframes fadeDown {
+      from { opacity:0; transform:translateY(-14px); }
+      to   { opacity:1; transform:translateY(0); }
+    }
+    @keyframes fadeUp {
+      from { opacity:0; transform:translateY(18px); }
+      to   { opacity:1; transform:translateY(0); }
+    }
+    .card:nth-child(1) { animation-delay: .15s; }
+    .card:nth-child(2) { animation-delay: .25s; }
+    .card:nth-child(3) { animation-delay: .35s; }
+    .card:nth-child(4) { animation-delay: .45s; }
+    .card:nth-child(5) { animation-delay: .55s; }
+    .card:nth-child(6) { animation-delay: .65s; }
+  </style>
+</head>
+<body>
+
+<nav>
+  <a class="nav-brand" href="https://softwaredeveloperx.com/">
+    >_ <span>SDR</span> SOFTWARE DEVELOPER
+  </a>
+  <a class="back" href="https://softwaredeveloperx.com/">← Home</a>
+</nav>
+
+<section class="hero">
+  <div class="status-badge">
+    <span class="status-dot"></span>
+    Available for Remote Work — 2025
+  </div>
+
+  <h1>
+    <span class="name">Sudirman</span><br>
+    <span class="role">Senior Software Developer</span>
+    <span class="blink"></span>
+  </h1>
+
+  <p class="tagline">
+    <strong>17+ years</strong> building enterprise systems — SharePoint, C#, CI/CD, E2E Testing.
+    Based in <strong>Indonesia (WIB, UTC+7)</strong>. Open to remote contracts and full-time roles worldwide.
+  </p>
+
+  <div class="meta-row">
+    <div class="meta-item"><span class="icon">◎</span> <strong>Indonesia</strong>&nbsp;(UTC+7 / WIB)</div>
+    <div class="meta-item"><span class="icon">◈</span> Remote&nbsp;·&nbsp;Contract&nbsp;·&nbsp;Full-time</div>
+    <div class="meta-item"><span class="icon">◇</span> English&nbsp;·&nbsp;Indonesian</div>
+    <div class="meta-item"><span class="icon">◉</span> <strong>softwaredeveloperx.com</strong></div>
+  </div>
+</section>
+
+<div class="content">
+
+  <!-- Skills -->
+  <div class="card full">
+    <div class="card-title">Core Skills</div>
+    <div class="skills-grid">
+      <span class="tag hi">SharePoint Online</span>
+      <span class="tag hi">C# / .NET</span>
+      <span class="tag hi">SPFx</span>
+      <span class="tag hi">E2E Testing</span>
+      <span class="tag hi">Document Driven Dev</span>
+      <span class="tag">SharePoint 2007–2016</span>
+      <span class="tag">Finite State Machine</span>
+      <span class="tag">CI / CD</span>
+      <span class="tag">GitHub Actions</span>
+      <span class="tag">Data Modelling</span>
+      <span class="tag">REST API</span>
+      <span class="tag">IIS / Windows Server</span>
+      <span class="tag">SAP Integration</span>
+      <span class="tag">Migration Projects</span>
+      <span class="tag">Multi-tenant Architecture</span>
+      <span class="tag">Markdown / Technical Writing</span>
+    </div>
+  </div>
+
+  <!-- Experience timeline -->
+  <div class="card">
+    <div class="card-title">Journey</div>
+    <div class="timeline">
+      <div class="tl-item">
+        <span class="tl-year">2007</span>
+        <div class="tl-text"><strong>SharePoint WSS3 / MOSS</strong> — built WebParts accessing SAP via ZBAPI</div>
+      </div>
+      <div class="tl-item">
+        <span class="tl-year">2013</span>
+        <div class="tl-text"><strong>Livelink → SharePoint 2010</strong> — multi-country migration (ID, UK, VN, SG, CA)</div>
+      </div>
+      <div class="tl-item">
+        <span class="tl-year">2017</span>
+        <div class="tl-text"><strong>SharePoint 2010 → 2013</strong> — DB-level migration & environment setup</div>
+      </div>
+      <div class="tl-item">
+        <span class="tl-year">2022</span>
+        <div class="tl-text"><strong>SharePoint 2013 → Online</strong> — cross-country team (ID, UK, VN, US PM)</div>
+      </div>
+      <div class="tl-item">
+        <span class="tl-year">2023</span>
+        <div class="tl-text"><strong>SharePoint Online</strong> — solo-led migration project</div>
+      </div>
+      <div class="tl-item">
+        <span class="tl-year">2024</span>
+        <div class="tl-text"><strong>Custom SPFx</strong> — fully branded SharePoint Online UI for client</div>
+      </div>
+      <div class="tl-item">
+        <span class="tl-year">2025</span>
+        <div class="tl-text"><strong>C# system</strong> — DDD methodology, FSM-based E2E testing, CI/CD multi-tenant</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Availability -->
+  <div class="card">
+    <div class="card-title">What I Offer</div>
+    <div class="avail-list">
+      <div class="avail-item">
+        <div class="avail-dot"></div>
+        <div class="avail-text"><strong>SharePoint Consultant</strong> — migration, SPFx development, SharePoint Online setup</div>
+      </div>
+      <div class="avail-item">
+        <div class="avail-dot"></div>
+        <div class="avail-text"><strong>C# / .NET Developer</strong> — enterprise systems, APIs, data modelling</div>
+      </div>
+      <div class="avail-item">
+        <div class="avail-dot"></div>
+        <div class="avail-text"><strong>Testing Architecture</strong> — E2E strategy, FSM-based scripts, test generators</div>
+      </div>
+      <div class="avail-item">
+        <div class="avail-dot"></div>
+        <div class="avail-text"><strong>CI/CD Setup</strong> — GitHub Actions, multi-tenant pipelines</div>
+      </div>
+      <div class="avail-item">
+        <div class="avail-dot"></div>
+        <div class="avail-text"><strong>Technical Documentation</strong> — Document Driven Development, MD-based Source of Truth</div>
+      </div>
+      <div class="avail-item">
+        <div class="avail-dot"></div>
+        <div class="avail-text"><strong>Timezone:</strong> WIB (UTC+7) — overlaps well with AU, SG, MY, and EU mornings</div>
+      </div>
+    </div>
+  </div>
+
+  <hr class="divider"/>
+
+  <!-- Contact form -->
+  <div class="card full">
+    <div class="card-title">Send a Message</div>
+    <div class="form-grid" id="contactForm">
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:1rem;" class="two-col">
+        <div>
+          <label>YOUR NAME</label>
+          <input type="text" id="fname" placeholder="Jane Smith" />
+        </div>
+        <div>
+          <label>YOUR EMAIL</label>
+          <input type="email" id="femail" placeholder="jane@company.com" />
+        </div>
+      </div>
+      <div>
+        <label>TOPIC</label>
+        <select id="ftopic">
+          <option value="">— Select —</option>
+          <option>SharePoint Migration / Consulting</option>
+          <option>C# / .NET Development</option>
+          <option>E2E Testing Architecture</option>
+          <option>CI/CD Pipeline Setup</option>
+          <option>Full-time Remote Role</option>
+          <option>Other</option>
+        </select>
+      </div>
+      <div>
+        <label>YOUR MESSAGE</label>
+        <textarea id="fmsg" placeholder="Tell me about your project or role..."></textarea>
+      </div>
+      <div style="display:flex;gap:.8rem;flex-wrap:wrap;align-items:center;">
+        <button class="btn" onclick="handleSend()">
+          ▶ Send Message
+        </button>
+        <a class="btn btn-ghost" href="https://softwaredeveloperx.com/contact/">
+          Or use contact page →
+        </a>
+      </div>
+      <div id="confirm">
+        ✓ Message noted! This is a demo form — connect it to Formspree or EmailJS to go live.
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer note -->
+  <div class="full" style="text-align:center;padding-top:1rem;">
+    <p style="font-family:var(--font-mono);font-size:.75rem;color:var(--muted);">
+      Read my articles at
+      <a href="https://softwaredeveloperx.com/workflow/" style="color:var(--cyan);text-decoration:none;">softwaredeveloperx.com/workflow</a>
+      &nbsp;·&nbsp; Writing since 2023 &nbsp;·&nbsp; Sharing what I know
+    </p>
+  </div>
+
+</div>
+
+<script>
+  // responsive two-col form
+  const twoCol = document.querySelector('.two-col');
+  function checkWidth() {
+    if (window.innerWidth < 520) twoCol.style.gridTemplateColumns = '1fr';
+    else twoCol.style.gridTemplateColumns = '1fr 1fr';
+  }
+  window.addEventListener('resize', checkWidth);
+  checkWidth();
+
+  function handleSend() {
+    const name  = document.getElementById('fname').value.trim();
+    const email = document.getElementById('femail').value.trim();
+    const msg   = document.getElementById('fmsg').value.trim();
+    if (!name || !email || !msg) {
+      alert('Please fill in Name, Email, and Message.');
+      return;
+    }
+    document.getElementById('confirm').style.display = 'block';
+  }
+</script>
+
+</body>
+</html>

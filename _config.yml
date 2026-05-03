@@ -1,0 +1,42 @@
+title: SDR - Software DevelopeR
+description: sharing seputar Software Developer
+author: SuDiRman
+email: mdsudirman@gmail.com
+theme: minima
+
+header_pages:
+    - index.md
+
+plugins:
+    - jekyll-feed
+    - jekyll-seo-tag
+    - jekyll-sitemap
+
+exclude:
+    - README.md
+    - Gemfile
+    - Gemfile.lock
+    - node_modules
+    - vendor
+
+sass:
+    sass_dir: _sass
+    style: compressed
+
+google_analytics: G-DD3C3FZW9H
+
+defaults:
+    - scope:
+          path: '_posts/id'
+          type: posts
+      values:
+          lang: id
+          permalink: /id/:title/
+          layout: a_new_post_id
+    - scope:
+          path: '_posts/en'
+          type: posts
+      values:
+          lang: en
+          permalink: /en/:title/
+          layout: a_new_post

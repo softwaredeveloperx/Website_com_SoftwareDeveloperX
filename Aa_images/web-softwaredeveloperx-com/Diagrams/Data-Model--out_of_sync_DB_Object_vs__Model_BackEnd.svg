@@ -1,0 +1,700 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   width="570"
+   height="452"
+   version="1.1"
+   id="svg2"
+   sodipodi:docname="Data-Model--out_of_sync_ab.svg"
+   inkscape:version="1.4.3 (0d15f75, 2025-12-25)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:dc="http://purl.org/dc/elements/1.1/">
+  <sodipodi:namedview
+     id="namedview2"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:zoom="1.3677966"
+     inkscape:cx="284.76456"
+     inkscape:cy="295"
+     inkscape:window-width="1920"
+     inkscape:window-height="1009"
+     inkscape:window-x="-8"
+     inkscape:window-y="-8"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg2" />
+  <title
+     id="title1">Diagram Arsitektur 3 Layer</title>
+  <desc
+     id="desc1">Arsitektur sistem 3 layer: FrontEnd, BackEnd, dan Database. Entity di BackEnd merepresentasikan Table di Database.</desc>
+  <defs
+     id="defs1">
+    <marker
+       id="arrow"
+       markerHeight="6"
+       markerWidth="6"
+       orient="auto-start-reverse"
+       refX="8"
+       refY="5"
+       viewBox="0 0 10 10">
+      <path
+         d="M 2,1 8,5 2,9"
+         fill="none"
+         id="svg_1"
+         stroke="context-stroke"
+         stroke-linecap="round"
+         stroke-linejoin="round"
+         stroke-width="1.5" />
+    </marker>
+    <mask
+       id="imagine-text-gaps-2xqdm1"
+       maskUnits="userSpaceOnUse">
+      <rect
+         fill="#ffffff"
+         height="780"
+         id="svg_2"
+         width="680"
+         x="0"
+         y="0" />
+      <rect
+         fill="#000000"
+         height="21.940001"
+         id="svg_3"
+         rx="2"
+         width="70.269997"
+         x="76"
+         y="35.029999" />
+      <rect
+         fill="#000000"
+         height="21.940001"
+         id="svg_4"
+         rx="2"
+         width="59.27"
+         x="210.05"
+         y="53.029999" />
+      <rect
+         fill="#000000"
+         height="21.940001"
+         id="svg_5"
+         rx="2"
+         width="77.129997"
+         x="328.85999"
+         y="53.029999" />
+      <rect
+         fill="#000000"
+         height="21.940001"
+         id="svg_6"
+         rx="2"
+         width="44.099998"
+         x="463.23999"
+         y="53.029999" />
+      <rect
+         fill="#000000"
+         height="21.940001"
+         id="svg_7"
+         rx="2"
+         width="66.980003"
+         x="76"
+         y="171.03" />
+      <rect
+         fill="#000000"
+         height="21.940001"
+         id="svg_8"
+         rx="2"
+         width="161.37"
+         x="269.14999"
+         y="205.03" />
+      <rect
+         fill="#000000"
+         height="21.940001"
+         id="svg_9"
+         rx="2"
+         width="126.52"
+         x="104"
+         y="299.03" />
+      <rect
+         fill="#000000"
+         height="21.940001"
+         id="svg_10"
+         rx="2"
+         width="49.290001"
+         x="107.54"
+         y="335.03" />
+      <rect
+         fill="#000000"
+         height="21.940001"
+         id="svg_11"
+         rx="2"
+         width="118.65"
+         x="225.67999"
+         y="335.03" />
+      <rect
+         fill="#000000"
+         height="21.940001"
+         id="svg_12"
+         rx="2"
+         width="58.639999"
+         x="215.81"
+         y="405.03" />
+      <rect
+         fill="#000000"
+         height="21.940001"
+         id="svg_13"
+         rx="2"
+         width="61.470001"
+         x="334.39999"
+         y="405.03" />
+      <rect
+         fill="#000000"
+         height="21.940001"
+         id="svg_14"
+         rx="2"
+         width="61.470001"
+         x="454.56"
+         y="405.03" />
+      <rect
+         fill="#000000"
+         height="21.940001"
+         id="svg_15"
+         rx="2"
+         width="71.720001"
+         x="76"
+         y="541.03003" />
+      <rect
+         fill="#000000"
+         height="21.940001"
+         id="svg_16"
+         rx="2"
+         width="44.009998"
+         x="89.68"
+         y="579.03003" />
+      <rect
+         fill="#000000"
+         height="21.940001"
+         id="svg_17"
+         rx="2"
+         width="51.16"
+         x="219.08"
+         y="579.03003" />
+      <rect
+         fill="#000000"
+         height="21.940001"
+         id="svg_18"
+         rx="2"
+         width="53.990002"
+         x="337.67001"
+         y="579.03003" />
+      <rect
+         fill="#000000"
+         height="21.940001"
+         id="svg_19"
+         rx="2"
+         width="53.990002"
+         x="457.82001"
+         y="579.03003" />
+      <rect
+         fill="#000000"
+         height="19.110001"
+         id="svg_20"
+         rx="2"
+         width="93.029999"
+         x="-26.209999"
+         y="502.44" />
+    </mask>
+  </defs>
+  <!-- ===== LAYER 1: FrontEnd ===== -->
+  <!-- Arrow: FrontEnd → BackEnd -->
+  <!-- ===== LAYER 2: BackEnd ===== -->
+  <!-- Sub-box: API / Service end-point -->
+  <!-- Sub-box: Data Model - DTO -->
+  <!-- Entity box -->
+  <!-- Model W (Write) box -->
+  <!-- Arrow: Model W → Entity -->
+  <!-- Model 1 -->
+  <!-- Model 2 -->
+  <!-- Model 3 -->
+  <!-- Arrow: BackEnd → Database -->
+  <!-- ===== LAYER 3: Database ===== -->
+  <!-- Table box -->
+  <!-- View 1 -->
+  <!-- View 2 -->
+  <!-- View 3 -->
+  <!-- Arrows: Model → View (vertical) -->
+  <!-- View 2 → View 1 -->
+  <!-- View 1 → Table -->
+  <!-- View 3 → Table (routing bawah) -->
+  <!-- ===== Entity == Table: garis putus-putus double-headed ===== -->
+  <!-- Label -->
+  <!-- Garis dari Entity ke Table -->
+  <rect
+     fill="#e6f1fb"
+     height="254.57156"
+     id="svg_35"
+     rx="12.436662"
+     stroke="#185fa5"
+     stroke-width="0.41391px"
+     width="532.99982"
+     x="18.000019"
+     y="9.9330063" />
+  <text
+     dominant-baseline="central"
+     fill="#0c447c"
+     font-family="'Anthropic Sans', '-apple-system', BlinkMacSystemFont, 'Segoe UI', sans-serif"
+     font-size="13.1952px"
+     font-weight="500"
+     id="svg_36"
+     stroke-width="0.942514px"
+     text-anchor="start"
+     transform="scale(0.94251418,1.060992)"
+     x="56.798443"
+     y="33.195507">BackEnd</text>
+  <g
+     fill="#000000"
+     font-family="'Anthropic Sans', '-apple-system', BlinkMacSystemFont, 'Segoe UI', sans-serif"
+     font-size="16px"
+     font-weight="400"
+     id="svg_40"
+     stroke-width="1px"
+     text-anchor="start"
+     transform="matrix(0.85614,0,0,1,-12.6491,-221.77769)">
+    <rect
+       fill="#faeeda"
+       height="184"
+       id="svg_41"
+       rx="10"
+       stroke="#854f0b"
+       stroke-width="0.5px"
+       width="570"
+       x="65"
+       y="286" />
+    <text
+       dominant-baseline="central"
+       fill="#633806"
+       font-family="'Anthropic Sans', '-apple-system', BlinkMacSystemFont, 'Segoe UI', sans-serif"
+       font-size="14px"
+       font-weight="500"
+       id="svg_42"
+       stroke-width="1px"
+       text-anchor="start"
+       x="108"
+       y="310">Data Model – DTO</text>
+  </g>
+  <g
+     fill="#000000"
+     font-family="'Anthropic Sans', '-apple-system', BlinkMacSystemFont, 'Segoe UI', sans-serif"
+     font-size="16px"
+     font-weight="400"
+     id="svg_43"
+     stroke-width="1px"
+     text-anchor="start"
+     transform="translate(-22,-221.77769)">
+    <rect
+       fill="#faeeda"
+       height="40"
+       id="svg_44"
+       rx="8"
+       stroke="#854f0b"
+       stroke-width="1px"
+       width="100"
+       x="82"
+       y="326" />
+    <text
+       dominant-baseline="central"
+       fill="#633806"
+       font-family="'Anthropic Sans', '-apple-system', BlinkMacSystemFont, 'Segoe UI', sans-serif"
+       font-size="14px"
+       font-weight="500"
+       id="svg_45"
+       stroke-width="1px"
+       text-anchor="middle"
+       x="132"
+       y="346">Entity</text>
+  </g>
+  <g
+     fill="#000000"
+     font-family="'Anthropic Sans', '-apple-system', BlinkMacSystemFont, 'Segoe UI', sans-serif"
+     font-size="16px"
+     font-weight="400"
+     id="svg_46"
+     stroke-width="1px"
+     text-anchor="start"
+     transform="translate(-22,-221.77769)">
+    <rect
+       fill="#faeeda"
+       height="40"
+       id="svg_47"
+       rx="8"
+       stroke="#854f0b"
+       stroke-width="1px"
+       width="150"
+       x="210"
+       y="326" />
+    <text
+       dominant-baseline="central"
+       fill="#633806"
+       font-family="'Anthropic Sans', '-apple-system', BlinkMacSystemFont, 'Segoe UI', sans-serif"
+       font-size="14px"
+       font-weight="500"
+       id="svg_48"
+       stroke-width="1px"
+       text-anchor="middle"
+       x="285"
+       y="346">Model W (Write)</text>
+  </g>
+  <line
+     fill="#000000"
+     id="svg_49"
+     marker-end="url(#arrow)"
+     stroke="#3d3d3a"
+     stroke-width="1.5px"
+     x1="188"
+     x2="162"
+     y1="124.22"
+     y2="124.22" />
+  <g
+     fill="#000000"
+     font-family="'Anthropic Sans', '-apple-system', BlinkMacSystemFont, 'Segoe UI', sans-serif"
+     font-size="16px"
+     font-weight="400"
+     id="svg_50"
+     stroke-width="1px"
+     text-anchor="start"
+     transform="translate(-22,-221.77769)">
+    <rect
+       fill="#faeeda"
+       height="40"
+       id="svg_51"
+       rx="8"
+       stroke="#854f0b"
+       stroke-width="1px"
+       width="90"
+       x="200"
+       y="396" />
+    <text
+       dominant-baseline="central"
+       fill="#633806"
+       font-family="'Anthropic Sans', '-apple-system', BlinkMacSystemFont, 'Segoe UI', sans-serif"
+       font-size="14px"
+       font-weight="500"
+       id="svg_52"
+       stroke-width="1px"
+       text-anchor="middle"
+       x="245"
+       y="416">Model 1</text>
+  </g>
+  <g
+     fill="#000000"
+     font-family="'Anthropic Sans', '-apple-system', BlinkMacSystemFont, 'Segoe UI', sans-serif"
+     font-size="16px"
+     font-weight="400"
+     id="svg_53"
+     stroke-width="1px"
+     text-anchor="start"
+     transform="translate(-22,-221.77769)">
+    <rect
+       fill="#faeeda"
+       height="40"
+       id="svg_54"
+       rx="8"
+       stroke="#854f0b"
+       stroke-width="1px"
+       width="90"
+       x="320"
+       y="396" />
+    <text
+       dominant-baseline="central"
+       fill="#633806"
+       font-family="'Anthropic Sans', '-apple-system', BlinkMacSystemFont, 'Segoe UI', sans-serif"
+       font-size="14px"
+       font-weight="500"
+       id="svg_55"
+       stroke-width="1px"
+       text-anchor="middle"
+       x="365"
+       y="416">Model 2</text>
+  </g>
+  <g
+     fill="#000000"
+     font-family="'Anthropic Sans', '-apple-system', BlinkMacSystemFont, 'Segoe UI', sans-serif"
+     font-size="16px"
+     font-weight="400"
+     id="svg_56"
+     stroke-width="1px"
+     text-anchor="start"
+     transform="translate(-22,-221.77769)">
+    <rect
+       fill="#faeeda"
+       height="40"
+       id="svg_57"
+       rx="8"
+       stroke="#854f0b"
+       stroke-width="1px"
+       width="90"
+       x="440"
+       y="396" />
+    <text
+       dominant-baseline="central"
+       fill="#633806"
+       font-family="'Anthropic Sans', '-apple-system', BlinkMacSystemFont, 'Segoe UI', sans-serif"
+       font-size="14px"
+       font-weight="500"
+       id="svg_58"
+       stroke-width="1px"
+       text-anchor="middle"
+       x="485"
+       y="416">Model 3</text>
+  </g>
+  <g
+     fill="#000000"
+     font-family="'Anthropic Sans', '-apple-system', BlinkMacSystemFont, 'Segoe UI', sans-serif"
+     font-size="16px"
+     font-weight="400"
+     id="svg_60"
+     stroke-width="1px"
+     text-anchor="start"
+     transform="matrix(0.891667,0,0,1,-17.66667,-221.77769)">
+    <rect
+       fill="#e1f5ee"
+       height="230"
+       id="svg_61"
+       rx="14"
+       stroke="#0f6e56"
+       stroke-width="0.5px"
+       transform="matrix(1,0,0,0.591304,0,214.974)"
+       width="600"
+       x="40"
+       y="526" />
+    <text
+       dominant-baseline="central"
+       fill="#085041"
+       font-family="'Anthropic Sans', '-apple-system', BlinkMacSystemFont, 'Segoe UI', sans-serif"
+       font-size="14px"
+       font-weight="500"
+       id="svg_62"
+       stroke-width="1px"
+       text-anchor="start"
+       x="80"
+       y="552">Database</text>
+  </g>
+  <g
+     fill="#000000"
+     font-family="'Anthropic Sans', '-apple-system', BlinkMacSystemFont, 'Segoe UI', sans-serif"
+     font-size="16px"
+     font-weight="400"
+     id="svg_63"
+     stroke-width="1px"
+     text-anchor="start"
+     transform="translate(-22,-221.77769)">
+    <rect
+       fill="#e1f5ee"
+       height="40"
+       id="svg_64"
+       rx="8"
+       stroke="#0f6e56"
+       stroke-width="1px"
+       width="100"
+       x="62"
+       y="570" />
+    <text
+       dominant-baseline="central"
+       fill="#085041"
+       font-family="'Anthropic Sans', '-apple-system', BlinkMacSystemFont, 'Segoe UI', sans-serif"
+       font-size="14px"
+       font-weight="500"
+       id="svg_65"
+       stroke-width="1px"
+       text-anchor="middle"
+       x="112"
+       y="590">Table</text>
+  </g>
+  <g
+     fill="#000000"
+     font-family="'Anthropic Sans', '-apple-system', BlinkMacSystemFont, 'Segoe UI', sans-serif"
+     font-size="16px"
+     font-weight="400"
+     id="svg_66"
+     stroke-width="1px"
+     text-anchor="start"
+     transform="translate(-22,-221.77769)">
+    <rect
+       fill="#e1f5ee"
+       height="40"
+       id="svg_67"
+       rx="8"
+       stroke="#0f6e56"
+       stroke-width="1px"
+       width="90"
+       x="200"
+       y="570" />
+    <text
+       dominant-baseline="central"
+       fill="#085041"
+       font-family="'Anthropic Sans', '-apple-system', BlinkMacSystemFont, 'Segoe UI', sans-serif"
+       font-size="14px"
+       font-weight="500"
+       id="svg_68"
+       stroke-width="1px"
+       text-anchor="middle"
+       x="245"
+       y="590">View 1</text>
+  </g>
+  <g
+     fill="#000000"
+     font-family="'Anthropic Sans', '-apple-system', BlinkMacSystemFont, 'Segoe UI', sans-serif"
+     font-size="16px"
+     font-weight="400"
+     id="svg_69"
+     stroke-width="1px"
+     text-anchor="start"
+     transform="translate(-22,-221.77769)">
+    <rect
+       fill="#e1f5ee"
+       height="40"
+       id="svg_70"
+       rx="8"
+       stroke="#0f6e56"
+       stroke-width="1px"
+       width="90"
+       x="320"
+       y="570" />
+    <text
+       dominant-baseline="central"
+       fill="#085041"
+       font-family="'Anthropic Sans', '-apple-system', BlinkMacSystemFont, 'Segoe UI', sans-serif"
+       font-size="14px"
+       font-weight="500"
+       id="svg_71"
+       stroke-width="1px"
+       text-anchor="middle"
+       x="365"
+       y="590">View 2</text>
+  </g>
+  <g
+     fill="#000000"
+     font-family="'Anthropic Sans', '-apple-system', BlinkMacSystemFont, 'Segoe UI', sans-serif"
+     font-size="16px"
+     font-weight="400"
+     id="svg_72"
+     stroke-width="1px"
+     text-anchor="start"
+     transform="translate(-22,-221.77769)">
+    <rect
+       fill="#e1f5ee"
+       height="40"
+       id="svg_73"
+       rx="8"
+       stroke="#0f6e56"
+       stroke-width="1px"
+       width="90"
+       x="440"
+       y="570" />
+    <text
+       dominant-baseline="central"
+       fill="#085041"
+       font-family="'Anthropic Sans', '-apple-system', BlinkMacSystemFont, 'Segoe UI', sans-serif"
+       font-size="14px"
+       font-weight="500"
+       id="svg_74"
+       stroke-width="1px"
+       text-anchor="middle"
+       x="485"
+       y="590">View 3</text>
+  </g>
+  <line
+     fill="#000000"
+     id="svg_75"
+     marker-end="url(#arrow)"
+     stroke="#3d3d3a"
+     stroke-width="1.5px"
+     x1="223"
+     x2="223"
+     y1="214.22"
+     y2="346.22" />
+  <line
+     fill="#000000"
+     id="svg_76"
+     marker-end="url(#arrow)"
+     stroke="#3d3d3a"
+     stroke-width="1.5px"
+     x1="343"
+     x2="343"
+     y1="214.22"
+     y2="346.22" />
+  <line
+     fill="#000000"
+     id="svg_77"
+     marker-end="url(#arrow)"
+     stroke="#3d3d3a"
+     stroke-width="1.5px"
+     x1="463"
+     x2="463"
+     y1="214.22"
+     y2="346.22" />
+  <line
+     fill="#000000"
+     id="svg_78"
+     marker-end="url(#arrow)"
+     stroke="#3d3d3a"
+     stroke-width="1.5px"
+     x1="298"
+     x2="270"
+     y1="368.22"
+     y2="368.22" />
+  <line
+     fill="#000000"
+     id="svg_79"
+     marker-end="url(#arrow)"
+     stroke="#3d3d3a"
+     stroke-width="1.5px"
+     x1="178"
+     x2="142"
+     y1="368.22"
+     y2="368.22" />
+  <path
+     d="m 463,390.22 v 36 H 90 v -36"
+     fill="none"
+     id="svg_80"
+     marker-end="url(#arrow)"
+     stroke="#3d3d3a"
+     stroke-width="1.5px" />
+  <line
+     fill="#000000"
+     id="svg_82"
+     marker-end="url(#arrow)"
+     marker-start="url(#arrow)"
+     mask="url(#imagine-text-gaps-2xqdm1)"
+     stroke="#e24b4a"
+     stroke-dasharray="6px, 3px"
+     stroke-width="1.5px"
+     x1="90"
+     x2="90"
+     y1="278.22"
+     y2="480.22"
+     transform="translate(0,-134)" />
+  <g
+     fill="#000000"
+     font-family="'Anthropic Sans', '-apple-system', BlinkMacSystemFont, 'Segoe UI', sans-serif"
+     font-size="16px"
+     font-weight="400"
+     id="svg_87"
+     stroke-width="1px"
+     text-anchor="start"
+     transform="translate(351.5,-120.27769)" />
+  <metadata
+     id="metadata2">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:title>Diagram Arsitektur 3 Layer</dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+</svg>

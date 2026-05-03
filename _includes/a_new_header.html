@@ -1,0 +1,58 @@
+<style>
+    .logo-text-preview {
+        color: white;
+    }
+
+    .logo-text-preview strong {
+        display: block;
+        font-size: 1.3rem;
+        font-weight: 800;
+        letter-spacing: 1px;
+        line-height: 1.1;
+    }
+
+    .logo-text-preview small {
+        display: block;
+        font-size: 0.65rem;
+        color: rgba(255, 255, 255, 0.5);
+        letter-spacing: 2px;
+        margin-top: 3px;
+    }
+
+    .card-preview-white {
+        background: #f0f0f0;
+    }
+
+    .card-preview-white .logo-text-preview strong {
+        color: #2D1B4E;
+    }
+
+    .card-preview-white .logo-text-preview small {
+        color: #666;
+    }
+
+</style>
+<header class="company-profile-header">
+    <nav class="purple-nav">
+        <div class="nav-container">
+            <a href="{{ '/' | relative_url }}" class="logo-container">
+                <svg width="52" height="52" viewBox="0 0 52 52">
+                    <rect x="4" y="8" width="44" height="32" rx="6" fill="rgba(0,255,148,0.06)" stroke="white" stroke-width="2" /> <text x="11" y="28" fill="#00FF94" font-size="11" font-weight="700" font-family="'Courier New',monospace">&gt;_</text>
+                    <line x1="26" y1="40" x2="26" y2="46" stroke="white" stroke-width="2" />
+                    <line x1="18" y1="46" x2="34" y2="46" stroke="white" stroke-width="2" />
+                </svg>
+                <div class="logo-text-preview">
+                    <strong>SDR</strong>
+                    <small>SOFTWARE DEVELOPER</small>
+                </div>
+            </a>
+            <ul class="nav-links">
+                <li><a href="{{ '/' | relative_url }}" {% if page.url=="/" %}class="active" {% endif %}>Home</a></li>
+                <li><a href="{{ '/contents/' | relative_url }}" {% if page.url=="/contents/" %}class="active" {% endif %}>Contents</a></li>
+                <li><a href="{{ '/about/' | relative_url }}" {% if page.url=="/about/" %}class="active" {% endif %}>About</a></li>
+                <!--<li><a href="{{ '/services/' | relative_url }}" {% if page.url=="/services/" %}class="active" {% endif %}>Services</a></li>-->
+                <li><a href="{{ '/contact/' | relative_url }}" {% if page.url=="/contact/" %}class="active" {% endif %}>Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+</header>
